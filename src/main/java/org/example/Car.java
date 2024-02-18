@@ -1,6 +1,6 @@
 package org.example;
 
-public class Car extends MotorTransport {
+public final class Car extends MotorTransport {
     private String brandOfCar;
     private String modelOfCar;
 
@@ -24,6 +24,10 @@ public class Car extends MotorTransport {
 
     public void setModelOfCar(String modelOfCar) {
         this.modelOfCar = modelOfCar;
+    }
+
+    public final void carMethod() {
+        System.out.println("Машинка играет в шашечки");
     }
 
     @Override

@@ -25,7 +25,7 @@ public class WheeledTransport {
         this.maxSpeed = maxSpeed;
     }
 
-    public void  service() {
+    public void service() {
         System.out.println("Обслужено колёс - " + numberOfWheels);
     }
 
