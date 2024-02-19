@@ -17,11 +17,11 @@ public class Main {
         for (int i = 0; i < 91; i++) {
             player1.run();
         }
-        System.out.println(player1.getStamina());
+        System.out.println(Player.getCountPlayers());
         Player.info();
 
         Player player7 = new Player(94);
-        System.out.println(Player.countPlayers);
+        System.out.println(Player.getCountPlayers());
         Player.info();
 
         Player player8 = new Player(94);

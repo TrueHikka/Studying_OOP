@@ -5,7 +5,7 @@ public class Player {
     private final static int MAX_STAMINA = 100;
     private final static int MIN_STAMINA = 0;
 
-    static int countPlayers = 0;
+    private static int countPlayers = 0;
 
     public Player(int stamina) throws IllegalArgumentException {
         if(stamina < 90 || stamina > MAX_STAMINA) {
@@ -25,6 +25,9 @@ public class Player {
         return stamina;
     }
 
+    public static int getCountPlayers() {
+        return countPlayers;
+    }
 
     public void run() {
         if (stamina == MIN_STAMINA) {
