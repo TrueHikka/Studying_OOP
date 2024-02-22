@@ -27,6 +27,7 @@ public class WheeledTransport {
 
     public void service() {
         System.out.println("Обслужено колёс - " + numberOfWheels);
+        System.out.println("Max скорость - " + maxSpeed);
     }
 
     @Override
