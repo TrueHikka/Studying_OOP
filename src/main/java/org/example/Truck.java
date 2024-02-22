@@ -1,6 +1,6 @@
 package org.example;
 
-public class Truck extends MotorTransport {
+public final class Truck extends MotorTransport {
     private Integer loadCapacity;
 
     public Truck(Integer numberOfWheels, Integer maxSpeed, String engineType, Integer loadCapacity) {
@@ -14,6 +14,10 @@ public class Truck extends MotorTransport {
 
     public void setCapacityTrack(Integer capacityTrack) {
         this.loadCapacity = capacityTrack;
+    }
+
+    public final void truckMethod() {
+        System.out.println("Грузовичок грузит грузяку");
     }
 
     @Override

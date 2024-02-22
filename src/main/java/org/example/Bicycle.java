@@ -1,6 +1,6 @@
 package org.example;
 
-public class Bicycle extends WheeledTransport {
+public final class Bicycle extends WheeledTransport {
     private String typeOfBike;
 
     public Bicycle(Integer numberOfWheels, Integer maxSpeed, String typeOfBike) {
@@ -14,6 +14,10 @@ public class Bicycle extends WheeledTransport {
 
     public void getTypeOfBike(String typeOfBike) {
         this.typeOfBike = typeOfBike;
+    }
+
+    public final void bicycleMethod() {
+        System.out.println("Велик едет неспеша");
     }
 
     @Override
