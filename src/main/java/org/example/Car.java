@@ -33,6 +33,19 @@ public final class Car extends MotorTransport {
     @Override
     public void service() {
         super.service();
+        checkBrandAndModelOfCar();
+    }
+
+    private void checkBrandAndModelOfCar() {
         System.out.println("Фирма машины - " + brandOfCar + ", марка машины - " + modelOfCar);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" + "numberOfWheels=" + super.getNumberOfWheels() +
+                ", maxSpeed=" + super.getMaxSpeed() +
+                ", brandOfCar='" + brandOfCar + '\'' +
+                ", modelOfCar='" + modelOfCar + '\'' +
+                '}';
     }
 }

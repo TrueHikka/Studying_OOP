@@ -2,6 +2,9 @@ package org.example;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -28,14 +31,37 @@ public class Main {
         Player.info();
 
 //        Задание - 1
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите тип транспорта (либо полное название, либо цифры от 1 до 3): ");
-        String type = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите тип транспорта (либо полное название, либо цифры от 1 до 3): ");
+//        String type = scanner.nextLine();
 
-        WheeledTransport transport = getWheeledTransport(type);
+//        WheeledTransport transport = getWheeledTransport(type);
+//        ServiceStation.visitServiceStation(transport);
 
-        visitServiceStation(transport);
-        scanner.close();
+       Bicycle bicycle1 = new Bicycle(2, 30, "Горный" );
+       Bicycle bicycle2 = new Bicycle(2, 5, "Обычный скоростной");
+
+       Car car1 = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
+       Car car2 = new Car(4, 500, "Бензиновый", "Zhiguli", "Russian Autoprom");
+
+       Truck truck1 = new Truck(6, 150, "Дизельный", 1000);
+       Truck truck2 = new Truck(6, 120, "Дизельный", 1500);
+
+        List<Transport> transports = new ArrayList<>();
+        transports.add(bicycle1);
+        transports.add(bicycle2);
+        transports.add(car1);
+        transports.add(car2);
+        transports.add(truck1);
+        transports.add(truck2);
+
+        for (Transport transport : transports) {
+            System.out.println("\n");
+            ServiceStation.visitServiceStation(transport);
+//            System.out.println(transport);
+        }
+
+//        scanner.close();
     }
 
     @NotNull
@@ -65,19 +91,5 @@ public class Main {
             throw new Error("Неверный формат ввода. Такого транспорта не существует");
         }
         return transport;
-    }
-
-    private static void visitServiceStation(@NotNull WheeledTransport transport) {
-        transport.service();
-        if (transport instanceof Bicycle) {
-            Bicycle bicycle = (Bicycle) transport;
-            bicycle.bicycleMethod();
-        } else if (transport instanceof Car) {
-            Car car = (Car) transport;
-            car.carMethod();
-        } else if (transport instanceof Truck) {
-            Truck truck = (Truck) transport;
-            truck.truckMethod();
-        }
     }
 }
