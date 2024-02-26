@@ -23,6 +23,18 @@ public final class Truck extends MotorTransport {
     @Override
     public void service() {
         super.service();
+        checkLoadCapacity();
+    }
+
+    private void checkLoadCapacity() {
         System.out.println("Грузоподъемность - " + loadCapacity);
+    }
+
+    @Override
+    public String toString() {
+        return "Truck{" + "numberOfWheels=" + super.getNumberOfWheels() +
+                ", maxSpeed=" + super.getMaxSpeed() +
+                ", loadCapacity=" + loadCapacity +
+                '}';
     }
 }

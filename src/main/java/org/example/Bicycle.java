@@ -23,7 +23,18 @@ public final class Bicycle extends WheeledTransport {
     @Override
     public void service() {
         super.service();
+        checkTypeOfBike();
+    }
+
+    private void checkTypeOfBike() {
         System.out.println("Обслужено навесное оборудование велосипеда типа: " + typeOfBike);
     }
 
+    @Override
+    public String toString() {
+        return "Bicycle{" + "numberOfWheels=" + super.getNumberOfWheels() +
+                ", maxSpeed=" + super.getMaxSpeed() +
+                ", typeOfBike='" + typeOfBike + '\'' +
+                '}';
+    }
 }
