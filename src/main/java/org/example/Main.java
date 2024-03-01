@@ -41,8 +41,24 @@ public class Main {
        Bicycle bicycle1 = new Bicycle(2, 30, "Горный" );
        Bicycle bicycle2 = new Bicycle(2, 5, "Обычный скоростной");
 
-       Car car1 = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
-       Car car2 = new Car(4, 500, "Бензиновый", "Zhiguli", "Russian Autoprom");
+//       Car car1 = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
+//       Car car2 = new Car(4, 500, "Бензиновый", "Zhiguli", "Russian Autoprom");
+
+        Car car1 = new Car.CarBuilder()
+                .numberOfWheels(4)
+                .maxSpeed(200)
+                .engineType("Бензиновый")
+                .hasBrandOfCar("Toyota")
+                .hasModelOfCar("Corolla")
+                .build();
+
+        Car car2 = new Car.CarBuilder()
+                .numberOfWheels(4)
+                .maxSpeed(500)
+                .engineType("Бензиновый")
+                .hasBrandOfCar("Zhiguli")
+                .hasModelOfCar("Russian Autoprom")
+                .build();
 
        Truck truck1 = new Truck(6, 150, "Дизельный", 1000);
        Truck truck2 = new Truck(6, 120, "Дизельный", 1500);
@@ -73,7 +89,14 @@ public class Main {
             if(typeInt == 1) {
                 transport = new Bicycle(2, 30, "Горный");
             } else if (typeInt == 2) {
-                transport = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
+//                transport = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
+                transport = new Car.CarBuilder()
+                        .numberOfWheels(4)
+                        .maxSpeed(200)
+                        .engineType("Бензиновый")
+                        .hasBrandOfCar("Toyota")
+                        .hasModelOfCar("Corolla")
+                        .build();
 
             } else if (typeInt == 3) {
                 transport = new Truck(6, 150, "Дизельный", 1000);
@@ -84,7 +107,13 @@ public class Main {
         } else if (type.equalsIgnoreCase("bicycle")) {
             transport = new Bicycle(2, 30, "Горный");
         } else if (type.equalsIgnoreCase("car")) {
-            transport = new Car(4, 200, "Бензиновый", "Toyota", "Corolla");
+            transport = new Car.CarBuilder()
+                    .numberOfWheels(4)
+                    .maxSpeed(200)
+                    .engineType("Бензиновый")
+                    .hasBrandOfCar("Toyota")
+                    .hasModelOfCar("Corolla")
+                    .build();
         } else if (type.equalsIgnoreCase("truck")) {
             transport = new Truck(6, 150, "Дизельный", 1000);
         } else {
