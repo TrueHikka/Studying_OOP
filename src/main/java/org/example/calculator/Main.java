@@ -20,8 +20,8 @@ public class Main {
         System.out.println(calculator.multiply(4, 3));
 
         //Деление
-        System.out.println(calculator.divideInt(5, 2));
-        System.out.println(calculator.divideDouble(5, 3));
+//        System.out.println(calculator.divideInt(5, 3));
+        System.out.println(calculator.divide(5, 3));
 
     }
 }

@@ -15,11 +15,10 @@ public class Calculator {
         return sum;
     }
     public int add(int firstNum, int... otherNums) {
-        int result = 0;
         for (int otherNum : otherNums) {
-            result += otherNum;
+            firstNum += otherNum;
         }
-        return firstNum + result;
+        return firstNum;
     }
 
     public int subtract(int a, int b) {
@@ -30,23 +29,23 @@ public class Calculator {
         return a * b;
     }
 
-    public int divideInt(int a, int b) {
-        if (b == 0) {
-            throw new Error("Делить на 0 нельзя!");
-        }
+//    public int divideInt(int a, int b) {
+//        if (b == 0) {
+//            throw new Error("Делить на 0 нельзя!");
+//        }
+//
+//        double result = 1.0 * a / b;
+//        int intResult = (int) Math.floor(result);
+//        double fractionalResult = result - intResult;
+//
+//        if (fractionalResult * 10 < 5) {
+//            return (int) Math.floor(result);
+//        } else {
+//            return (int) Math.ceil(result);
+//        }
+//    }
 
-        double result = 1.0 * a / b;
-        int intResult = (int) Math.floor(result);
-        double fractionalResult = result - intResult;
-
-        if (fractionalResult * 10 < 5) {
-            return (int) Math.floor(result);
-        } else {
-            return (int) Math.ceil(result);
-        }
-    }
-
-    public double divideDouble(int a, int b) {
+    public double divide(int a, int b) {
         if (b == 0) {
             throw new Error("Делить на 0 нельзя!");
         }
